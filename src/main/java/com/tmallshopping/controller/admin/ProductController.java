@@ -23,7 +23,12 @@ import java.io.IOException;
 import java.util.List;
 import java.util.UUID;
 
-/**
+/**https://github.com/2609698046/blogsystems/blob/master/photo/detail.jpg
+ *https://github.com/2609698046/blogsystems/blob/master/photo/movie.jpg
+ *https://github.com/2609698046/blogsystems/blob/master/photo/login.jpg
+ * https://github.com/2609698046/blogsystems/blob/master/photo/htindex.jpg
+ *https://github.com/2609698046/blogsystems/blob/master/photo/movielist.jpg
+ * https://github.com/2609698046/blogsystems/blob/master/photo/index.jpg
  * @author Yuyunkuo
  * @Description:
  * @date 2019/8/18 9:12
@@ -31,6 +36,7 @@ import java.util.UUID;
 @Controller
 @RequestMapping("/admin")
 public class ProductController {
+
     @Autowired
     private ProductService productService;
     @Autowired
