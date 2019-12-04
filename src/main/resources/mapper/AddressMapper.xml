@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tmallshopping.mapper.AddressMapper">
+    <!--新增收货地址-->
+    <insert id="insertSelective">
+        insert into address(userId, province, city, county, detailAddress, conName, conTel) values
+        (#{userId}, #{province}, #{city}, #{county}, #{detailAddress}, #{conName}, #{conTel})
+    </insert>
+    <update id="updateByPrimaryKeySelective">
+        update address
+        set  province =#{province},city=#{city}
+        ,county=#{county},detailAddress=#{detailAddress},conName=#{conName}
+        ,conTel=#{conTel}
+        where id =#{id}
+    </update>
+    <delete id="deleteByPrimaryKey">
+        delete from address where id =#{id}
+    </delete>
+
+    <!--根据用户ID来查询收货地址-->
+    <select id="getAllAddressByUserId" resultType="com.tmallshopping.entity.Address">
+        SELECT * FROM address a INNER JOIN user u  ON a.userId = u.id where a.userId=#{userId}
+    </select>
+
+    <!--根据订单信息的地址ID 查询收货地址-->
+    <select id="selectByPrimaryKey" resultType="com.tmallshopping.entity.Address">
+        select
+        *
+        from address
+        where id = #{id}
+    </select>
+</mapper>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tmallshopping.mapper.CarouselMapper">
+    <update id="updateCarousel">
+        update carousel
+        set images = #{images}
+        where id = #{id}
+    </update>
+    <select id="selAllCarousel" resultType="com.tmallshopping.entity.Carousel">
+        select * from carousel
+    </select>
+</mapper>
